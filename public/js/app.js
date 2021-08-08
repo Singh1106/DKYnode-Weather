@@ -7,7 +7,7 @@ weatherForm.addEventListener('submit',(event)=>{
     if(input.value===''){
         error.textContent='Please type something atleast';
     }else{
-        const url=`http://api.weatherstack.com/current?access_key=08029e3f29ca187064464ee8ce4ebf71&query=${input.value}`;
+        const url=`/weather?address=${input.value}`;
         fetch(url)
             .then((res)=>{
                 res.json().then((data)=>{
