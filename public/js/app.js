@@ -7,15 +7,14 @@ weatherForm.addEventListener('submit',(event)=>{
     if(input.value===''){
         error.textContent='Please type something atleast';
     }else{
-        const url=`/weather?address=${input.value}`;
-        fetch(url)
+        fetch(`/weather?address=${input.value}`)
             .then((res)=>{
                 res.json().then((data)=>{
                     if(data.error){
                         error.textContent='Please search something else';
                         success.textContent='';
                     }else{
-                        success.textContent=`${data.current.weather_descriptions[0]} for location ${input.value}`;
+                        success.textContent=`${data.forecast} for location ${data.location}`;
                         error.textContent='';
                     }
                 })
