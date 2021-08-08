@@ -1,5 +1,3 @@
-
-
 const weatherForm=document.querySelector('form');
 const input=document.querySelector('input');
 const error=document.querySelector('#error');
