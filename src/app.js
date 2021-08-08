@@ -9,6 +9,7 @@ const viewsPath=path.join(__dirname,'../public/views');
 const partialsPath=path.join(__dirname,'../public/partials');
 
 const myApp=express();
+const port=process.env.PORT || 3000
 
 // setting up handlebar engine and views path.
 myApp.set('view engine','hbs');
@@ -57,7 +58,7 @@ myApp.get('*',(req,res)=>{
     res.render('404');
 })
 
-myApp.listen(3000,()=>{
-    console.log('Optional this is, but still, server is up at 3000');
+myApp.listen(port,()=>{
+    console.log(`Optional this is, but still, server is up at ${port}`);
 });
 
